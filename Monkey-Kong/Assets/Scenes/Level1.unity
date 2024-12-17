@@ -186,6 +186,10 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 7567556368802691683, guid: 4088507fcccc38c4fae18cca34b0c1d8, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4088507fcccc38c4fae18cca34b0c1d8, type: 3}
 --- !u!1001 &121702409
@@ -299,6 +303,14 @@ PrefabInstance:
     - target: {fileID: 4929584073299230367, guid: bee1f3c5268c99442a8451ef8ca798a0, type: 3}
       propertyPath: m_Name
       value: Mario
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346534641585588553, guid: bee1f3c5268c99442a8451ef8ca798a0, type: 3}
+      propertyPath: moveSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8346534641585588553, guid: bee1f3c5268c99442a8451ef8ca798a0, type: 3}
+      propertyPath: jumpStrength
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bee1f3c5268c99442a8451ef8ca798a0, type: 3}
@@ -1222,6 +1234,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7567556368802691683, guid: 4088507fcccc38c4fae18cca34b0c1d8, type: 3}
       propertyPath: m_Size.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7567556368802691683, guid: 4088507fcccc38c4fae18cca34b0c1d8, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
       value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
