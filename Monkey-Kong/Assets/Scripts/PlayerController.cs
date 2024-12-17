@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
+    public Sprite[] runSprites;
+    public Sprite climbSprite;
+    private int spriteIndex;
+
     private Rigidbody2D rigidBody;
     private Collider2D col;
     private Collider2D[] results;
     private Vector2 direction;
+
     public float moveSpeed = 1f;
     public float jumpStrength = 1f;
 
@@ -16,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         results = new Collider2D[4];
@@ -84,6 +91,35 @@ public class PlayerController : MonoBehaviour
             {
                 climbing = true;
             }
+        }
+    }
+
+    private void OnEnable()
+    {
+        InvokeRepeating(nameof(AnimateSprite), 1f / 12f, 1f / 12f);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
+    }
+
+    private void AnimateSprite()
+    {
+        if (climbing)
+        {
+            spriteRenderer.sprite = climbSprite;
+        }
+        else if (direction.x != 0f)
+        {
+            spriteIndex++;
+
+            if (spriteIndex >= runSprites.Length)
+            {
+                spriteIndex = 0;
+            }
+
+            spriteRenderer.sprite = runSprites[spriteIndex];
         }
     }
 }
